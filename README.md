@@ -102,13 +102,25 @@ Default:
 
 ### `copyAI.includePath`
 
-Specifies whether to include GPT metadata in the header.
+Specifies whether to include the file path in the header.
 
 Default:
 
 ```json
 {
   "copyAI.includePath": false
+}
+```
+
+### `copyAI.includeInstruction`
+
+Specifies whether to include the instruction text in the instruction.
+
+Default:
+
+```json
+{
+  "copyAI.includeInstruction": "Ensure that the file path appears as a header before the code block.\nYour task is to."
 }
 ```
 
