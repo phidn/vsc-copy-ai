@@ -17,3 +17,9 @@
 - Initial release of the Copy AI extension.
 - Basic functionality to copy the contents of files within a folder or selected files to the clipboard.
 - Configuration options for AI instruction and file content copying.
+
+## [1.0.2] - 2024-04-15
+
+### Added
+
+- Fix the issue with the clipboard UTF-8 encoding.
