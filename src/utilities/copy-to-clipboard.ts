@@ -19,9 +19,11 @@ export async function copyToClipboard({ content }: CopyToClipboardProps) {
         : platform === "darwin"
           ? "pbcopy"
           : "xclip -selection clipboard";
-    const proc = spawn(copyCommand, { shell: true });
 
-    proc.stdin.write(content);
+    const env = { ...process.env, LANG: "en_US.UTF-8" };
+    const proc = spawn(copyCommand, { shell: true, env });
+
+    proc.stdin.write(content, "utf8");
     proc.stdin.end();
   } catch (error: any) {
     throw new Error(`Error copying to clipboard: ${error.message}`);
